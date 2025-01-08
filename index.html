@@ -10,18 +10,32 @@
     <div class="quiz-container">
         <h1>Kuis Temukan Genre Buku yang Cocok untukmu!</h1>
         <form id="quiz-form">
-            <div class="question">
+            <div class="question" id="question-1">
                 <p>1. Apa yang paling kamu nikmati dalam sebuah cerita?</p>
                 <label><input type="radio" name="q1" value="A"> Dunia yang penuh dengan keajaiban dan fantasi</label><br>
                 <label><input type="radio" name="q1" value="B"> Cerita yang bikin penasaran dan penuh kejutan</label><br>
                 <label><input type="radio" name="q1" value="C"> Kisah yang mengharukan dan menyentuh hati</label><br>
                 <label><input type="radio" name="q1" value="D"> Cerita yang memberi wawasan baru tentang dunia nyata</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(1)">Next</button>
             </div>
-            <!-- Tambahkan pertanyaan lainnya dengan cara yang sama -->
-            <button type="submit">Kirim Jawaban</button>
+
+            <div class="question" id="question-2" style="display: none;">
+                <p>2. Apa yang kamu lakukan saat merasa bosan?</p>
+                <label><input type="radio" name="q2" value="A"> Menjelajahi dunia baru dalam imajinasi</label><br>
+                <label><input type="radio" name="q2" value="B"> Mencari sesuatu yang menantang dan penuh teka-teki</label><br>
+                <label><input type="radio" name="q2" value="C"> Mencari cerita yang menyentuh dan penuh makna</label><br>
+                <label><input type="radio" name="q2" value="D"> Membaca tentang kisah nyata dan belajar dari pengalaman orang lain</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(2)">Next</button>
+            </div>
+
+            <!-- Tambahkan lebih banyak pertanyaan di sini sesuai kebutuhan -->
+
+            <div id="result" style="display: none;"></div>
         </form>
-        <div id="result"></div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
