@@ -110,8 +110,65 @@
                 <button type="button" onclick="calculateResult()">Submit</button>
             </div>
         </form>
+        <div id="result" style="display: none;">
+            <h2>Hasil Kuis:</h2>
+            <p id="result-text"></p>
+        </div>
     </div>
 
-    <script src="quiz.js"></script>
+    <script>
+        let currentQuestion = 1;
+
+        function nextQuestion(questionNumber) {
+            const question = document.getElementById('question-' + questionNumber);
+            question.style.display = 'none';
+            currentQuestion++;
+            const nextQuestion = document.getElementById('question-' + currentQuestion);
+            if (nextQuestion) {
+                nextQuestion.style.display = 'block';
+            }
+        }
+
+        function calculateResult() {
+            const form = document.getElementById('quiz-form');
+            const answers = form.querySelectorAll('input[type="radio"]:checked');
+            let result = { A: 0, B: 0, C: 0, D: 0 };
+
+            answers.forEach(answer => {
+                result[answer.value]++;
+            });
+
+            let maxAnswer = '';
+            let maxCount = 0;
+            for (const [key, value] of Object.entries(result)) {
+                if (value > maxCount) {
+                    maxCount = value;
+                    maxAnswer = key;
+                }
+            }
+
+            let resultText = '';
+
+            switch (maxAnswer) {
+                case 'A':
+                    resultText = 'Genre yang cocok untukmu adalah Fantasi atau Petualangan!';
+                    break;
+                case 'B':
+                    resultText = 'Genre yang cocok untukmu adalah Misteri atau Thriller!';
+                    break;
+                case 'C':
+                    resultText = 'Genre yang cocok untukmu adalah Drama atau Romansa!';
+                    break;
+                case 'D':
+                    resultText = 'Genre yang cocok untukmu adalah Non-fiksi atau Biografi!';
+                    break;
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            const resultTextElement = document.getElementById('result-text');
+            resultTextElement.innerText = resultText;
+        }
+    </script>
 </body>
 </html>
