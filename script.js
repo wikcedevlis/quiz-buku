@@ -1,13 +1,15 @@
 document.getElementById('quiz-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Cek apakah semua pertanyaan sudah dijawab
     let answers = {
         q1: document.querySelector('input[name="q1"]:checked')?.value,
         // Tambahkan pertanyaan lainnya dengan cara yang sama
     };
 
+    // Cek apakah ada jawaban yang belum dipilih
     if (!answers.q1) {
-        alert("Jawab semua pertanyaan!");
+        alert("Pilih satu dunia untuk melanjutkan.");
         return;
     }
 
