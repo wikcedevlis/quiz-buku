@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuis Temukan Genre Buku</title>
+    <title>Cari Tau Genre Buku Kamu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,12 +30,88 @@
                 <button type="button" onclick="nextQuestion(2)">Next</button>
             </div>
 
-            <!-- Tambahkan lebih banyak pertanyaan di sini sesuai kebutuhan -->
+            <div class="question" id="question-3" style="display: none;">
+                <p>3. Saat kamu menonton film, kamu lebih suka genre apa?</p>
+                <label><input type="radio" name="q3" value="A"> Fantasi atau Aksi</label><br>
+                <label><input type="radio" name="q3" value="B"> Thriller atau Detektif</label><br>
+                <label><input type="radio" name="q3" value="C"> Drama atau Romansa</label><br>
+                <label><input type="radio" name="q3" value="D"> Dokumenter atau Biografi</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(3)">Next</button>
+            </div>
 
-            <div id="result" style="display: none;"></div>
+            <div class="question" id="question-4" style="display: none;">
+                <p>4. Kamu lebih suka buku yang:</p>
+                <label><input type="radio" name="q4" value="A"> Memiliki banyak petualangan dan keajaiban</label><br>
+                <label><input type="radio" name="q4" value="B"> Mengandung teka-teki yang sulit dipecahkan</label><br>
+                <label><input type="radio" name="q4" value="C"> Menggugah perasaan dan penuh emosi</label><br>
+                <label><input type="radio" name="q4" value="D"> Memberikan wawasan dan pengetahuan baru</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(4)">Next</button>
+            </div>
+
+            <div class="question" id="question-5" style="display: none;">
+                <p>5. Jika kamu menghadapi masalah, lebih suka membaca tentang:</p>
+                <label><input type="radio" name="q5" value="A"> Mengatasi tantangan dengan cara yang ajaib</label><br>
+                <label><input type="radio" name="q5" value="B"> Mengungkap misteri dan mencari jawaban</label><br>
+                <label><input type="radio" name="q5" value="C"> Membangun hubungan dan memecahkan konflik emosional</label><br>
+                <label><input type="radio" name="q5" value="D"> Belajar dari orang-orang yang sudah berpengalaman</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(5)">Next</button>
+            </div>
+
+            <div class="question" id="question-6" style="display: none;">
+                <p>6. Karakter utama dalam cerita, menurut kamu, harusnya:</p>
+                <label><input type="radio" name="q6" value="A"> Penuh keberanian dan kekuatan</label><br>
+                <label><input type="radio" name="q6" value="B"> Cerdas dan mampu memecahkan masalah</label><br>
+                <label><input type="radio" name="q6" value="C"> Penuh emosi dan hubungan antar karakter</label><br>
+                <label><input type="radio" name="q6" value="D"> Punya wawasan mendalam tentang dunia nyata</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(6)">Next</button>
+            </div>
+
+            <div class="question" id="question-7" style="display: none;">
+                <p>7. Kamu lebih suka cerita yang:</p>
+                <label><input type="radio" name="q7" value="A"> Memiliki dunia yang imajinatif dan fantastis</label><br>
+                <label><input type="radio" name="q7" value="B"> Penuh dengan kejutan dan ketegangan</label><br>
+                <label><input type="radio" name="q7" value="C"> Memiliki hubungan karakter yang kuat dan penuh perasaan</label><br>
+                <label><input type="radio" name="q7" value="D"> Menyajikan kisah nyata atau fakta yang menarik</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(7)">Next</button>
+            </div>
+
+            <div class="question" id="question-8" style="display: none;">
+                <p>8. Saat membaca buku, kamu lebih suka:</p>
+                <label><input type="radio" name="q8" value="A"> Buku dengan dunia yang luas dan penuh keajaiban</label><br>
+                <label><input type="radio" name="q8" value="B"> Buku yang memecahkan misteri atau menyelesaikan masalah</label><br>
+                <label><input type="radio" name="q8" value="C"> Buku yang menceritakan kisah emosional atau romansa</label><br>
+                <label><input type="radio" name="q8" value="D"> Buku yang memberi pengetahuan atau wawasan praktis</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(8)">Next</button>
+            </div>
+
+            <div class="question" id="question-9" style="display: none;">
+                <p>9. Bagaimana kamu menggambarkan diri kamu sendiri?</p>
+                <label><input type="radio" name="q9" value="A"> Penuh imajinasi dan selalu mencari petualangan baru</label><br>
+                <label><input type="radio" name="q9" value="B"> Cerdas, suka memecahkan teka-teki dan misteri</label><br>
+                <label><input type="radio" name="q9" value="C"> Penuh emosi dan peduli dengan hubungan antar manusia</label><br>
+                <label><input type="radio" name="q9" value="D"> Praktis dan lebih suka cerita yang memberikan wawasan baru</label>
+                <br><br>
+                <button type="button" onclick="nextQuestion(9)">Next</button>
+            </div>
+
+            <div class="question" id="question-10" style="display: none;">
+                <p>10. Apa yang membuatmu terpesona dalam sebuah cerita?</p>
+                <label><input type="radio" name="q10" value="A"> Keajaiban dan dunia yang penuh petualangan</label><br>
+                <label><input type="radio" name="q10" value="B"> Teka-teki yang menarik dan penuh kejutan</label><br>
+                <label><input type="radio" name="q10" value="C"> Karakter yang mengharukan dan perkembangan emosional</label><br>
+                <label><input type="radio" name="q10" value="D"> Fakta menarik dan informasi yang dapat diaplikasikan dalam kehidupan</label>
+                <br><br>
+                <button type="button" onclick="calculateResult()">Submit</button>
+            </div>
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script src="quiz.js"></script>
 </body>
 </html>
