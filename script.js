@@ -1,43 +1,45 @@
+let currentQuestion = 1;
+
 function nextQuestion(questionNumber) {
-    let selectedAnswer = document.querySelector(`input[name="q${questionNumber}"]:checked`);
-    
-    if (!selectedAnswer) {
-        alert("Pilih salah satu jawaban untuk melanjutkan.");
+    const current = document.getElementById(`question-${questionNumber}`);
+    const next = document.getElementById(`question-${questionNumber + 1}`);
+    if (!current.querySelector('input[type="radio"]:checked')) {
+        alert("Please select an answer before proceeding.");
+        return;
+    }
+    current.style.display = "none";
+    next.style.display = "block";
+    currentQuestion++;
+}
+
+function calculateResult() {
+    const answers = [];
+    for (let i = 1; i <= 10; i++) {
+        const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedAnswer) {
+            answers.push(selectedAnswer.value);
+        }
+    }
+
+    if (answers.length < 10) {
+        alert("Please answer all questions.");
         return;
     }
 
-    // Sembunyikan pertanyaan saat ini
-    document.getElementById(`question-${questionNumber}`).style.display = 'none';
+    let genre = determineGenre(answers);
+    alert(`Your recommended genre is: ${genre}`);
+}
 
-    // Tentukan genre berdasarkan jawaban
-    let score = {
-        A: 0,
-        B: 0,
-        C: 0,
-        D: 0
-    };
+function determineGenre(answers) {
+    let score = {A: 0, B: 0, C: 0, D: 0};
+    
+    answers.forEach(answer => {
+        score[answer]++;
+    });
 
-    // Menyimpan jawaban
-    let answer = selectedAnswer.value;
-    score[answer]++;
-
-    // Jika ada pertanyaan berikutnya, tampilkan
-    if (document.getElementById(`question-${questionNumber + 1}`)) {
-        document.getElementById(`question-${questionNumber + 1}`).style.display = 'block';
-    } else {
-        // Jika pertanyaan terakhir, tampilkan hasil
-        let genre = '';
-        if (score.A > score.B && score.A > score.C && score.A > score.D) {
-            genre = 'Fantasi atau Petualangan';
-        } else if (score.B > score.A && score.B > score.C && score.B > score.D) {
-            genre = 'Misteri atau Thriller';
-        } else if (score.C > score.A && score.C > score.B && score.C > score.D) {
-            genre = 'Drama atau Romansa';
-        } else {
-            genre = 'Non-Fiksi atau Sejarah';
-        }
-
-        document.getElementById('result').style.display = 'block';
-        document.getElementById('result').textContent = `Genre buku yang cocok untukmu adalah: ${genre}`;
-    }
+    let maxScore = Math.max(score.A, score.B, score.C, score.D);
+    if (score.A === maxScore) return "Fantasy/Adventure";
+    if (score.B === maxScore) return "Mystery/Thriller";
+    if (score.C === maxScore) return "Drama/Romance";
+    if (score.D === maxScore) return "Non-fiction/Knowledge";
 }
