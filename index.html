@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuis Buku</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Kuis Buku: Karakter Fiksi Mana yang Mirip Kamu?</title>
+    <link rel="stylesheet" href="style.css"> <!-- Pastikan ini mengarah ke file style.css -->
 </head>
 <body>
-    <div class="quiz-container">
+    <div class="container">
         <h1>Kuis Buku: Karakter Fiksi Mana yang Mirip Kamu?</h1>
-        <form id="quizForm">
-            <div class="question">
-                <p>Jika kamu bisa pergi ke dunia fiksi, kemana kamu akan pergi?</p>
-                <label>
-                    <input type="radio" name="q1" value="A">
-                    Dunia Fantasi
-                </label><br>
-                <label>
-                    <input type="radio" name="q1" value="B">
-                    Dunia Misteri
-                </label><br>
-                <label>
-                    <input type="radio" name="q1" value="C">
-                    Dunia Romansa
-                </label><br>
-                <label>
-                    <input type="radio" name="q1" value="D">
-                    Dunia Sejarah
-                </label><br>
-            </div>
-            <button type="button" onclick="submitQuiz()">Kirim Jawaban</button>
+        <p>Jika kamu bisa pergi ke dunia fiksi, kemana kamu akan pergi?</p>
+        
+        <form>
+            <label>
+                <input type="radio" name="world" value="Fantasi"> Dunia Fantasi
+            </label>
+            <label>
+                <input type="radio" name="world" value="Misteri"> Dunia Misteri
+            </label>
+            <label>
+                <input type="radio" name="world" value="Romansa"> Dunia Romansa
+            </label>
+            <label>
+                <input type="radio" name="world" value="Sejarah"> Dunia Sejarah
+            </label>
+            <button type="submit">Kirim Jawaban</button>
         </form>
-        <div id="result"></div>
     </div>
-    <script src="script.js"></script>
+    
+    <script src="script.js"></script> <!-- Pastikan ini mengarah ke file script.js -->
 </body>
 </html>
+
 
 
