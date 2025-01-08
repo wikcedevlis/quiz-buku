@@ -20,7 +20,11 @@ h1 {
 }
 
 .question {
-    display: none;
+    display: none; /* Semua pertanyaan disembunyikan */
+}
+
+#question-1 {
+    display: block; /* Pertanyaan pertama harus tampil */
 }
 
 button {
